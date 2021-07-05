@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital managment system</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+    .top-navbar{
+    position: relative;
+    z-index: 10;
+}
+.top-navbar .navbar{
+    padding: 15px 0px;
+    position: fixed;
+    width: 100%;
+    transition: height .3s ease-out, background .3s ease-out, box-shadow .3s ease-out;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    z-index: 100;
+}
+.top-navbar .navbar-light .navbar-nav .nav-link{
+    color: #010101;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+.top-navbar .navbar-light .navbar-nav .nav-item .nav-link:hover{
+    background: #02ceed;
+    color: #ffffff;
+}
+.top-navbar .navbar-light .navbar-nav .nav-item.active .nav-link{
+    background: #02ceed;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu{
+    border: none;
+     box-shadow: 20px 50px 60px rgba(0,0,0,0.5);
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu a.dropdown-item:hover{
+    background: #02ceed;
+    color: #ffffff;
+}
+.navbar-light .navbar-toggler:hover{
+    background: #02ceed;
+}
+.fa {
+  padding:25px;
+  font-size: 25px;
+  width:25px;
+  text-align:right;
+  text-decoration: none;
+  margin: 10px 10px;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+  color:  #3B5998; 
+}
+.fa-twitter {
+  color: #55ACEE;
+}
+.fa-google {
+  color: #dd4b39;
+}
+.fa-linkedin {
+  color:#007bb5;
+}
+.banner-area {
+  min-height: 800px;
+  background-image: url("images/home-banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative; }
+.qt-background{
+    background: url("images/qt-bg.jpg") no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+    background-attachment: fixed;
+    background-position: center center;
+    position: relative;
+}
+.area-heading {
+  margin-bottom: 60px; }
+  .area-heading h3 {
+    font-size: 36px;
+    color: #33363e;
+    position: relative; }
+    .about-area {
+  background: #f7f7f7;
+  background-image: url("images/bg_1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-top: 400px;
+  padding-bottom: 110px;
+  margin-top: -180px; }
+.hotline-area {
+  color:red;
+  background-image: url("D:/Study-files/Bootstrap/images/001.jpg");
+  background-position: center;}
+  .hotline-area span {
+    font-size: 60px;
+    font-weight: 800;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 28px;
+    display: block; }
+    .footer-area{
+    padding-top: 50px;
+    padding-bottom: 0px;
+}
+.bg-f{
+    background-image: url("images/bg_1.jpg");
+    background-attachment: scroll;
+    background-clip: initial;
+    background-color: rgba(0, 0, 0, 0);
+    background-origin: initial;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.bg-f::before {
+    background: #010101;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    opacity: 0.8;
+}
+.footer-area .container{
+    position: relative;
+    z-index: 1;
+}
+.footer-area h3{
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 24px;
+    border-bottom: 1px dashed rgba(207, 166, 113, 0.5);
+    margin-bottom: 10px;
+}
+.footer-area p{
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    padding-bottom: 10px;
+}
+.footer-area p.lead{
+    font-size: 19px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+.footer-area p.lead a{
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+.footer-area p.lead a:hover{
+    color: #d0a772;
+}
+.footer-area p a{
+    font-size: 18px;
+    color: #ffffff;
+}
+.footer-area p a:hover{
+    color: #d0a772;
+}
+.Designed{
+    margin-top: 20px;
+    position: relative;
+    display: block;
+    background-color: #010101;
+    border-top: 1px dashed rgba(207, 166, 113);
+    padding: 30px 0;
+    z-index: 1;
+}
+.Designed .company-name{
+    font-size: 16px;
+    text-align: center;
+}
+.Designed .company-name a{
+    font-size: 16px;
+}
+</style>    
+</head>
+<body style="background-color: lavender">
+
+    <header class="top-navbar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparet">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-buttons" aria-controls="navbars-buttons" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbars-buttons">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="Assignment.html">Home</a></li>
+                        <li class="nav-item "><a class="nav-link" href="about-us.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Doctors.html">Doctors</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservation.html">Departments</a></li>                      
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                <a class="dropdown-item" href="#">Make appointment</a>
+                                <a class="dropdown-item" href="#">Stuff</a>
+                                <a class="dropdown-item" href="#">Hospital photos</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="banner-area d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-lg-6 col-xl-5">
+                    <h1>Making Health<br>
+                    Care Better Together</h1>
+                    <h3>Hospitals are usually funded by the public sector, health organisations (for profit or nonprofit), health insurance companies, or charities, including direct charitable donations. Historically, hospitals were often founded and funded by religious orders, or by charitable individuals and leaders.</h3>
+                   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Make">Make an apointment</button>
+                    <div class="modal fade" id="Make" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+<div class="container">
+	<div class="container">
+  <h2>Appointment form</h2>
+  <form action="/action_page.php">
+  	<div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="name" class="form-control" id="name" style="width:170px;" placeholder="Enter your FullName" name="name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" style="width:170px;" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="Number">Phone Number</label>
+      <input type="Number" class="form-control" style="width:170px;" id="Number" placeholder="Enter your phone Number" name="Number">
+    </div>
+    <div class="form-group">
+      <label for="name">Enter Doctor name</label>
+      <input type="name" class="form-control" id="name" style="width:170px;"placeholder="Enter Doctor name" name="name">
+    </div>
+    <div class="checkbox">
+    	<i class="fa fa-info-circle" style="font-size:15px" data-toggle="tooltip" title="All of your data will be saved"></i>
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <a href="#" class="btn btn-info" role="button">Make appointment</a>
+        </div>
+      </div>
+       <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+  </form>    
+    </section>
+
+    <div class="qt-box qt-background">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto text-left">
+                        <h1 style="color:red">"We Care about Every <a style="color:darkblue">PATIENTS"</a></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <div class="container">
+  <h2 style="color:darkblue">Our Directors</h2>           
+  <table class="table table-striped table-info table-hover w-xlg">
+    <thead>
+      <tr>
+        <th><h3>Name</h3></th>
+        <th><h3>Department</h3></th>
+        <th><h3>Email</h3></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><h4>Dr.Nipun Mahajan</h4></td>
+        <td><h4>Cardiology</h4></td>
+        <td><h4 style="color: blue">docnipun@example.com</h4></td>
+      </tr>
+      <tr>
+        <td><h4>Dr.Nikhar Mahajan</h4></td>
+        <td><h4>Paediatrics</h4></td>
+        <td><h4 style="color: blue">dr_nikhar@example.com</h4></td>
+      </tr>
+      <tr>
+        <td><h4>Dr.Snigdha Mahajan</h4></td>
+        <td><h4>Ophthalmology</h4></td>
+        <td><h4 style="color: blue">mahajansnigdha@example.com</h4></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+            <div class="container">
+  <h2>Hospital Wards</h2>
+  <p>Wards photos</p>
+  <p>Click on the images to enlarge them.</p>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="D:/Study-files/Bootstrap/images/gallery-img-01.jpg" target="_blank">
+          <img src="D:/Study-files/Bootstrap/images/gallery-img-01.jpg" alt="Lights" style="width:100%">
+          <div class="caption">
+            <h5>Our Male ward Picture</h5>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="D:/Study-files/Bootstrap/images/gallery-img-02.jpg" target="_blank">
+          <img src="D:/Study-files/Bootstrap/images/gallery-img-02.jpg" style="width:80%">
+          <div class="caption">
+            <p>Our Female ward Picture</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="D:/Study-files/Bootstrap/images/gallery-img-03.jpg" target="_blank">
+          <img src="D:/Study-files/Bootstrap/images/gallery-img-03.jpg" alt="Fjords" style="width:80%">
+          <div class="caption">
+            <p>Children Ward picture</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+    <section class="hotline-area text-center area-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Emergency hotline</h2>
+                    <span>(+93)799999999</span>
+                    <p class="pt-3">We provide 24/7 customer support. Please feel free to contact us <br>for emergency case.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+      <a href="https://www.linkedin.com/" class="float-right fa fa-linkedin"></a>
+    <a href="https://www.twitter.com/" class="float-right fa fa-twitter"></a>
+    <a href="https://plus.google.com/" class="float-right fa fa-google"></a>
+    <a href="https://www.facebook.com/" class="float-right fa fa-facebook"></a>
+     <a href="https://www.google.com/maps/">
+          <i class="fa fa-map-marker"></i>
+           <span style="color:black;font-size:20px">Find us</span>
+        </a>
+        <div class="container" style="margin: center">
+  <ul class="pagination ">
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="about-us.html">2</a></li>
+    <li><a href="Doctors.html">3</a></li>
+  </ul>
+</div>
+        <footer class="footer-area bg-f">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <h3>About Us</h3>
+                    <p>A hospital is a health care institution providing patient treatment with specialized medical and nursing staff and medical equipment.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3>Opening hours</h3>
+                    <p><span class="text-color">Monday :</span> 9:Am - 10PM</p>
+                    <p><span class="text-color">Tue-Wed :</span> 9:Am - 10PM</p>
+                    <p><span class="text-color">Thu-Fri :</span> 9:Am - 10PM</p>
+                    <p><span class="text-color">Sat-Sun :</span> 5:PM - 10PM</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3>Contact information</h3>
+                    <p class="lead">
+						location unknown</p>
+                    <p class="lead"><a href="#">99999999</a></p>
+                    <p><a href="#">hospital@g.com</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="Designed">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="company-name"><a href="#"> Hospital Managment design</a> Designed by</a>
+                    <a href="https://www.facebook.com/mudasir.zamani.01">Mudasir Zamani</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+   </body>
+    
+</html>

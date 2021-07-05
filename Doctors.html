@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital managment system</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+    .top-navbar{
+    position: relative;
+    z-index: 10;
+}
+
+.top-navbar .navbar{
+    padding: 15px 0px;
+    position: fixed;
+    width: 100%;
+    transition: height .3s ease-out, background .3s ease-out, box-shadow .3s ease-out;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    z-index: 100;
+}
+.top-navbar .navbar-light .navbar-nav .nav-link{
+    color: #010101;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.top-navbar .navbar-light .navbar-nav .nav-item .nav-link:hover{
+    background: #02ceed;
+    color: #ffffff;
+}
+.top-navbar .navbar-light .navbar-nav .nav-item.active .nav-link{
+    background: #02ceed;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu{
+    border: none;
+     box-shadow: 20px 50px 60px rgba(0,0,0,0.5);
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu a.dropdown-item:hover{
+    background: #02ceed;
+    color: #ffffff;
+}
+.navbar-light .navbar-toggler:hover{
+    background: #02ceed;
+}
+.banner-area {
+  min-height: 800px;
+  background-image: url("images/Doctors1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative; }
+.qt-background{
+    background: url("images/qt-bg.jpg") no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+    background-attachment: fixed;
+    background-position: center center;
+    position: relative;
+}
+
+.area-heading {
+  margin-bottom: 60px; }
+  .area-heading h3 {
+    font-size: 36px;
+    color: #33363e;
+    position: relative; }
+    .about-area {
+  background: #f7f7f7;
+  background-image: url("images/bg_1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-top: 400px;
+  padding-bottom: 110px;
+  margin-top: -180px; }
+.bg-f{
+    background-image: url("images/bg_1.jpg");
+    background-attachment: scroll;
+    background-clip: initial;
+    background-color: rgba(0, 0, 0, 0);
+    background-origin: initial;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.bg-f::before {
+    background: #010101;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.footer-area .container{
+    position: relative;
+    z-index: 1;
+}
+.footer-area h3{
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 24px;
+    border-bottom: 1px dashed rgba(207, 166, 113, 0.5);
+    margin-bottom: 10px;
+}
+.footer-area p{
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.footer-area p.lead{
+    font-size: 19px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+.footer-area p.lead a{
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+.footer-area p.lead a:hover{
+    color: #d0a772;
+}
+.footer-area p a{
+    font-size: 18px;
+    color: #ffffff;
+}
+.footer-area p a:hover{
+    color: #d0a772;
+}
+.Designed{
+    margin-top: 20px;
+    position: relative;
+    display: block;
+    background-color: #010101;
+    border-top: 1px dashed rgba(207, 166, 113);
+    padding: 30px 0;
+    z-index: 1;
+}
+
+.Designed .company-name{
+    font-size: 16px;
+    text-align: center;
+}
+.Designed .company-name a{
+    font-size: 16px;
+}
+</style>    
+</head>
+<body style="background-color: lavender">
+    <header class="top-navbar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparet">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-buttons" aria-controls="navbars-buttons" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbars-buttons">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="Assignment.html">Home</a></li>
+                        <li class="nav-item "><a class="nav-link" href="about-us.html">About</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="#">Doctors</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservation.html">Departments</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                <a class="dropdown-item" href="#">Make appointment</a>
+                                <a class="dropdown-item" href="#">Stuff</a>
+                                <a class="dropdown-item" href="#">Hospital photos</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="banner-area d-flex align-items-center">
+    </section>
+  
+                  <div class="container">
+  <h2>Our Experienced Doctors</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="images/DrVijayMahajan.jpg" target="_blank">
+          <img src="images/DrVijayMahajan.jpg" alt="Lights" style="width:50%">
+            <h5>Dr.Vijay Mahajan</h5>
+        </a>
+        <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#Vijay">Doctor information</button>
+                    <div class="modal fade" id="Vijay" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+  
+<table class="table table-striped table-info table-hover table-sm">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dr.Vijay Mahajan</td>
+        <td>Medicine</td>
+        <td><p style="color: blue">drvjmn@example</p></td>
+      </tr>
+      <tr>
+  </tr>
+</tbody>
+</table>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="images/DrAshwaniSuri.jpg" target="_blank">
+          <img src="images/DrAshwaniSuri.jpg" style="width:50%">
+            <p>Dr.Ashwani Suri</p>
+        </a>
+             <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#Ashwani">Doctor information</button>
+                    <div class="modal fade" id="Ashwani" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+  
+<table class="table table-striped table-info table-hover table-sm">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dr.Ashwani Suri</td>
+        <td>Cardiovascular Surgery</td>
+        <td><p style="color: blue">suricardiac@example.com</p></td>
+      </tr>
+      <tr>
+  </tr>
+</tbody>
+</table>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="images/DrHarpreetKaur.jpg" target="_blank">
+          <img src="images/DrHarpreetKaur.jpg" alt="Fjords" style="width:45%">
+            <p>Dr.Harpreet Kaur</p>
+        </a>
+     <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#Harpreet">Doctor information</button>
+                    <div class="modal fade" id="Harpreet" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+<table class="table table-striped table-info table-hover table-sm">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dr.Harpreet Kaur</td>
+        <td>Skin, V.D. & Allergy</td>
+        <td><p style="color: blue">drharpreetderma@example</p></td>
+      </tr>
+      <tr>
+  </tr>
+</tbody>
+</table>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+ <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="images/DrRajeshVerma.jpg" target="_blank">
+          <img src="images/DrRajeshVerma.jpg" alt="Fjords" style="width:50%">
+          <div class="caption">
+            <p>Dr.Rajesh Verma</p>
+          </div>
+        </a>
+     <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#Rajesh">Doctor information</button>
+                    <div class="modal fade" id="Rajesh" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+<table class="table table-striped table-info table-hover table-sm">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dr.Rajesh Verma</td>
+        <td>Radiology</td>
+        <td><p style="color: blue">dr.vermarad@example</p></td>
+      </tr>
+      <tr>
+  </tr>
+</tbody>
+</table>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div> <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="images/DrHSThind.jpg" target="_blank">
+          <img src="images/DrHSThind.jpg" alt="Fjords" style="width:50%">
+          <div class="caption">
+            <p>Dr.H.S. Thind</p>
+          </div>
+        </a>
+     <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#Thind">Doctor information</button>
+                    <div class="modal fade" id="Thind" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+<table class="table table-striped table-info table-hover table-sm">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dr.H.S. Thind</td>
+        <td>Pulmonology</td>
+        <td><p style="color: blue">tagorehospital@example</p></td>
+      </tr>
+      <tr>
+  </tr>
+</tbody>
+</table>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div> <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="images/DrAmitVerma.jpg" target="_blank">
+          <img src="images/DrAmitVerma.jpg" alt="Fjords" style="width:50%">
+          <div class="caption">
+            <p>Dr.Amit Verma</p>
+          </div>
+        </a>
+     <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#Amit">Doctor information</button>
+                    <div class="modal fade" id="Amit" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+<table class="table table-striped table-info table-hover table-sm">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dr.Amit Verma</td>
+        <td> Urology</td>
+        <td><p style="color: blue">AmitVerma@example</p></td>
+      </tr>
+      <tr>
+  </tr>
+</tbody>
+</table>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+        <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="images/DrNipunMahajan.jpg" target="_blank">
+          <img src="images/DrNipunMahajan.jpg" alt="Fjords" style="width:50%">
+          <div class="caption">
+            <p>Dr.Nipun Mahajan</p>
+          </div>
+        </a>
+       <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#Nipun">Doctor information</button>
+                    <div class="modal fade" id="Nipun" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+<table class="table table-striped table-info table-hover table-sm">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dr.Nipun Mahajan</td>
+        <td>Cardiology</td>
+        <td><p style="color: blue">docnipun@example</p></td>
+      </tr>
+      <tr>
+  </tr>
+</tbody>
+</table>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+        <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="images/DrRaviSeth.jpg" target="_blank">
+          <img src="images/DrRaviSeth.jpg" alt="Fjords" style="width:50%">
+          <div class="caption">
+            <p>Dr.Ravi seth</p>
+          </div>
+        </a>
+     <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#Ravi">Doctor information</button>
+                    <div class="modal fade" id="Ravi" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+<table class="table table-striped table-info table-hover table-sm">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dr.Ravi Seth</td>
+        <td>General Surgery</td>
+        <td><p style="color: blue">drmanuseth@example</p></td>
+      </tr>
+      <tr>
+  </tr>
+</tbody>
+</table>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="images/DrSaurabhKohli.jpg" target="_blank">
+          <img src="images/DrSaurabhKohli.jpg" alt="Fjords" style="width:50%">
+          <div class="caption">
+            <p>Dr.Saurabh Kohli</p>
+          </div>
+        </a>
+     <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#Saurabh">Doctor information</button>
+                    <div class="modal fade" id="Saurabh" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+<table class="table table-striped table-info table-hover table-sm">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dr.Saurabh Kohli</td>
+        <td>Orthopaedics</td>
+        <td><p style="color: blue">tagorehospital@example</p></td>
+      </tr>
+      <tr>
+  </tr>
+</tbody>
+</table>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="images/DrSnigdhaMahajan.jpg" target="_blank">
+          <img src="images/DrSnigdhaMahajan.jpg" alt="Fjords" style="width:50%">
+          <div class="caption">
+            <p>Dr.Snigdha Mahajan</p>
+          </div>
+        </a>
+     <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#Snigdha">Doctor information</button>
+                    <div class="modal fade" id="Snigdha" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+<table class="table table-striped table-info table-hover table-sm">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dr.Snigdha Mahajan</td>
+        <td>Ophthalmology</td>
+        <td><p style="color: blue">mahajansnigdha@example</p></td>
+      </tr>
+      <tr>
+  </tr>
+</tbody>
+</table>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="images/DrNikharMahajan.jpg" target="_blank">
+          <img src="images/DrNikharMahajan.jpg" alt="Fjords" style="width:50%">
+          <div class="caption">
+            <p>Dr.Nikhar Mahajan</p>
+          </div>
+        </a>
+      <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#Nikhar">Doctor information</button>
+                    <div class="modal fade" id="Nikhar" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+<table class="table table-striped table-info table-hover table-sm">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dr.Nikhar Mahajan</td>
+        <td>Paediatrics</td>
+        <td><p style="color: blue">dr_nikhar@example</p></td>
+      </tr>
+      <tr>
+  </tr>
+</tbody>
+</table>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="images/DrRajeshKhanduja.jpg" target="_blank">
+          <img src="images/DrRajeshKhanduja.jpg" alt="Fjords" style="width:50%">
+          <div class="caption">
+            <p>Dr.Rajesh Khanduja</p>
+          </div>
+        </a>
+    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#Rajesh">Doctor information</button>
+                    <div class="modal fade" id="Rajesh" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+<table class="table table-striped table-info table-hover table-sm">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dr.Rajesh Khanduja</td>
+        <td>Nephrology</td>
+        <td><p style="color: blue">tagorehospital@example</p></td>
+      </tr>
+      <tr>
+  </tr>
+</tbody>
+</table>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+</div> 
+
+        <div class="container align-items-center">
+  <ul class="pagination pagination-lg" style="margin:center">
+    <li><a href="Assignment.html">1</a></li>
+    <li><a href="about-us.html">2</a></li>
+     <li class="active"><a href="#">3</a></li>
+  </ul>
+</div>
+
+
+        <footer class="footer-area bg-f">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <h3>About Us</h3>
+                    <p>A hospital is a health care institution providing patient treatment with specialized medical and nursing staff and medical equipment.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3>Opening hours</h3>
+                    <p><span class="text-color">Monday :</span> 9:Am - 10PM</p>
+                    <p><span class="text-color">Tue-Wed :</span> 9:Am - 10PM</p>
+                    <p><span class="text-color">Thu-Fri :</span> 9:Am - 10PM</p>
+                    <p><span class="text-color">Sat-Sun :</span> 5:PM - 10PM</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3>Contact information</h3>
+                    <p class="lead">
+location unknown</p>
+                    <p class="lead"><a href="#">99999999</a></p>
+                    <p><a href="#">hospital@g.com</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="Designed">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="company-name"><a href="#"> Hospital Managment design</a> Designed by</a>
+                    <a href="https://www.facebook.com/mudasir.zamani.01">Mudasir Zamani</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+
+   </body>
+    
+</html>
